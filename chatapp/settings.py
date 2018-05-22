@@ -25,7 +25,7 @@ SECRET_KEY = '&3%!&zg-9*dwv#j(^)ah1o(b@vb-9)^&3_rgmyxr7g4quhb9!n'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -37,6 +37,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'pusherchat.apps.PusherchatConfig',
+    'pusher',
+    'bootstrap3',
 ]
 
 MIDDLEWARE = [
@@ -75,8 +78,10 @@ WSGI_APPLICATION = 'chatapp.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'chatapp',
+        'USER': 'wesley',
+        'PASSWORD': 'password',
     }
 }
 
