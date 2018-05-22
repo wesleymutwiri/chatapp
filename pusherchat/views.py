@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
 from pusher import Pusher
 from decouple import config 
-
+from django.viewss.decorators.csrf import csrf_exempt
 # Create your views here.
 # app_id = "530013"
 # key = "5ff0d24bb6ed57478727"
