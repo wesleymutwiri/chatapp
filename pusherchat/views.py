@@ -24,3 +24,9 @@ pusher = Pusher(app_id=u'530013', key=u'5ff0d24bb6ed57478727',secret=u'7b0645440
 @login_required(login_url='/admin/login/')
 def chat(request):
     return render(request,"chat.html");
+
+
+@csrf_exempt
+def broadcast(request):
+    pusher.trigger(u'a_channel', u'an_event', {u'name':request.user.username, u'message':request.POST['message']})
+    return HttpResponse("done");

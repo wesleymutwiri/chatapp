@@ -21,4 +21,5 @@ from pusherchat import views
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', views.chat),
+    url(r'^ajax/chat/$', views.broadcast),
 ]
